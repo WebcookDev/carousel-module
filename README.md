@@ -6,7 +6,9 @@ Carousel module (carousel-module)
 [![Latest Unstable Version](https://poser.pugx.org/webcms2/carousel-module/v/unstable.png)](https://packagist.org/packages/webcms2/carousel-module)
 [![License](https://poser.pugx.org/webcms2/carousel-module/license.png)](https://packagist.org/packages/webcms2/carousel-module)
 
-Carousel module for homepages.
+Carousel module for homepages. 
+
+Requires Bootsrap
 
 INSTALLATION
 -----------

@@ -34,7 +34,7 @@ class CarouselItem extends \WebCMS\Entity\Entity {
     /**
      * @orm\Column(type="integer")
      */
-    private $order;
+    private $slideOrder;
     
     public function getText() {
 	return $this->text;
@@ -60,8 +60,8 @@ class CarouselItem extends \WebCMS\Entity\Entity {
 	return $this->picturePath;
     }
 
-    public function getOrder() {
-	return $this->order;
+    public function getSlideOrder() {
+	return $this->slideOrder;
     }
 
     public function setTitle($title) {
@@ -72,7 +72,7 @@ class CarouselItem extends \WebCMS\Entity\Entity {
 	$this->picturePath = $picturePath;
     }
 
-    public function setOrder($order) {
-	$this->order = $order;
+    public function setSlideOrder($slideOrder) {
+	$this->slideOrder = $slideOrder;
     }
 }

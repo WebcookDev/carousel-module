@@ -4,4 +4,15 @@
 
 	<h1>{$actualPage->getTitle()}</h1>
 	
+	<a class="btn btn-primary ajax" n:href="updateSlide idPage => $actualPage->getId()">{_'Add slide'}</a>
+
+	<br /><br />
+
+	<div class="tab-content">
+		<div class="tab-pane active">
+			{control carouselGrid}
+		</div>
+	</div>
+		
+	
 {/block}

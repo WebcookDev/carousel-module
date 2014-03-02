@@ -26,6 +26,7 @@ class Carousel extends \WebCMS\Module {
     );
 
     public function __construct(){
+		$this->addBox('Carousel box', 'Carousel', 'carouselBox');
     }
 
     public function cloneData($em, $oldLang, $newLang, $transform){
