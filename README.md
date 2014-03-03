@@ -8,12 +8,11 @@ Carousel module (carousel-module)
 
 Carousel module for homepages. 
 
-Requires Bootsrap
 
 INSTALLATION
 -----------
 
-Add this line into your compser.json file.
+Add this line into your composer.json file.
 
 ```
 "webcms2/carousel-module" : "0.*@dev"
