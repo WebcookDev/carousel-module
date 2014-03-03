@@ -1,0 +1,31 @@
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <table class="carousel-buttons">
+                  <tbody>
+                          <tr class="carousel-indicators">
+
+                                  {foreach $carouselItems as $item}
+                                          {var $counter = $iterator->counter - 1}
+                                          <td data-target="#carousel" data-slide-to="{$counter}" class="{if $counter == 0}active{/if}"><span class="tdtext">{$item->getTitle()}</span>&nbsp;</td>
+                                  {/foreach}
+                          </tr>
+                  </tbody>
+          </table>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+                  {foreach $carouselItems as $item}
+                          {var $counter = $iterator->counter - 1}
+                          <div class="item {if $counter == 0}active{/if}">
+                                  <img class="stretch" src="{$basePath}{$item->getPicturePath()|thumbnail:'carousel'}" alt="">
+                                  <div class="carousel-caption">
+
+                                          {!$item->getText()}
+
+                                  </div>
+                          </div>
+                  {/foreach}
+
+          </div>
+  </div>
