@@ -36,10 +36,23 @@ class CarouselPresenter extends \FrontendModule\BasePresenter{
 		
 		$repository = $context->em->getRepository('WebCMS\CarouselModule\Entity\CarouselItem');
 		
-		$carouselItems = $repository->findBy(array(), array('slideOrder' => 'ASC'));
+		$carouselItems = $repository->findBy(array('page' => $fromPage->getId()), array('slideOrder' => 'ASC'));
 		
 		$template = $context->createTemplate();
 		$template->setFile('../app/templates/carousel-module/Carousel/box.latte');
+		$template->carouselItems = $carouselItems;
+		
+		return $template;
+	}
+	
+	public function carouselSecondBox($context, $fromPage){
+		
+		$repository = $context->em->getRepository('WebCMS\CarouselModule\Entity\CarouselItem');
+		
+		$carouselItems = $repository->findBy(array('page' => $fromPage->getId()), array('slideOrder' => 'ASC'));
+		
+		$template = $context->createTemplate();
+		$template->setFile('../app/templates/carousel-module/Carousel/box1.latte');
 		$template->carouselItems = $carouselItems;
 		
 		return $template;
