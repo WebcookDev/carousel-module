@@ -27,7 +27,7 @@ class CarouselItem extends \WebCMS\Entity\Entity {
     private $page;
     
     /**
-     * @orm\Column
+     * @orm\Column(nullable=true)
      */
     private $picturePath;
     
