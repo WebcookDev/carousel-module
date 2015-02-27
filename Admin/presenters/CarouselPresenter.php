@@ -85,7 +85,7 @@ class CarouselPresenter extends BasePresenter {
 	public function createComponentCarouselItemForm(){
 		$form = $this->createForm();
 		
-		$form->addText('title', 'Title')->setRequired('Fill in title.');
+		$form->addText('title', 'Title');
 		$form->addText('slideOrder', 'Order')->setRequired('Fill in order.')
 				->addRule($form::INTEGER, 'Order must be a number', '.*[0-9].*');;
 		$form->addTextArea('text', 'Text')->setAttribute('class', array('editor'));
@@ -100,8 +100,6 @@ class CarouselPresenter extends BasePresenter {
 	
 	public function carouselItemFormSubmitted($form){
 		$values = $form->getValues();
-		
-		
 		
 		$this->page = $this->em->getRepository('WebCMS\Entity\Page')->findOneBy(array(
 			'id' => $this->actualPage->getId()
@@ -125,9 +123,9 @@ class CarouselPresenter extends BasePresenter {
 		$this->em->flush();
 		
 		$this->flashMessage('Slide has been saved.', 'success');
-		$this->redirect('default', array(
-			'idPage' => $this->actualPage->getId()
-		));
+		$this->forward('default', array(
+            'idPage' => $this->actualPage->getId()
+        ));
 	}
 	
 	
